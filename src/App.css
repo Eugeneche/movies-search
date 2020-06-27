@@ -1,0 +1,12 @@
+body {
+    background: url(../src/img/background.jpg);
+    background-color: #000000;
+    background-size: 100%;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1100px;
+    background: #000000a1;
+    min-height: 100vh;
+}
