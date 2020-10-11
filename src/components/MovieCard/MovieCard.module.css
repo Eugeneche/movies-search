@@ -1,0 +1,66 @@
+h1 {
+    color: #ffd700;
+}
+
+h2 {
+    color: #ffd700;
+}
+
+.infoBlock {
+    width: 50%;
+    float: left;
+}
+
+.playerBlock {
+    width: calc(50% - 2px);
+    float: left;
+    border: 1px solid #ffd9003b;
+}
+
+.description {
+    color: #ffd700;
+    margin-right: 30px;
+}
+
+.rating {
+    color: #ffd700;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        width: 80%;
+        margin: 10px auto 20px auto ;
+    }
+    .infoBlock {
+        width: 80%;
+        margin: auto;
+        float: none;
+    }
+    
+    .playerBlock {
+        width: calc(80% - 2px);
+        margin: auto;
+        float: none;
+    }
+
+    .rating {
+        margin: 20px 0 20px 0;
+
+    }
+}
+
+@media screen and (max-width: 550px) {
+    h1 {
+        width: 95%;
+    }
+    .infoBlock {
+        width: 95%;
+    }
+    
+    .playerBlock {
+        width: calc(95% - 2px);
+    }
+}

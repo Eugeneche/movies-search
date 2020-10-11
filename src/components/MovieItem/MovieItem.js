@@ -1,12 +1,13 @@
 import React from 'react';
-import styles from './MovieItem.module.css';
+import styles from '../Dashboard/Dashboard.module.css';
 
 
 const MovieItem = (props) => {
 
-    return(
-        <div className={styles.movieCard}></div>
-    )
+    return <div className={styles.movieItem}>
+        <img src={props.poster} alt={props.alt} />
+        <h2 className={styles.movieTitle}>{props.title}</h2>
+    </div>
 }
 
 export default MovieItem;
