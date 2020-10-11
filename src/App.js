@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import Dashboard from './components/Dashboard/Dashboard';
+import DashboardContainer from './components/Dashboard/DashboardContainer';
+import { Route } from 'react-router-dom';
+import MovieCardContainer from './components/MovieCard/MovieCardContainer';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <div className="wrapper">
-        <Dashboard />
+        <Route exact path='/' render={() => <DashboardContainer />} />
+        <Route path='/movie/:movieId' render={() => <MovieCardContainer />} />       
       </div>
     </div>
   );
