@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/movies-search/static/css/main.5e5cae3d.chunk.css",
-    "main.js": "/movies-search/static/js/main.08b34103.chunk.js",
-    "main.js.map": "/movies-search/static/js/main.08b34103.chunk.js.map",
+    "main.js": "/movies-search/static/js/main.5a745052.chunk.js",
+    "main.js.map": "/movies-search/static/js/main.5a745052.chunk.js.map",
     "runtime-main.js": "/movies-search/static/js/runtime-main.5f5da1d4.js",
     "runtime-main.js.map": "/movies-search/static/js/runtime-main.5f5da1d4.js.map",
     "static/css/2.10055323.chunk.css": "/movies-search/static/css/2.10055323.chunk.css",
-    "static/js/2.76543096.chunk.js": "/movies-search/static/js/2.76543096.chunk.js",
-    "static/js/2.76543096.chunk.js.map": "/movies-search/static/js/2.76543096.chunk.js.map",
+    "static/js/2.8a040e74.chunk.js": "/movies-search/static/js/2.8a040e74.chunk.js",
+    "static/js/2.8a040e74.chunk.js.map": "/movies-search/static/js/2.8a040e74.chunk.js.map",
     "index.html": "/movies-search/index.html",
-    "precache-manifest.c4f93b3ca63743cd621d3643833afbe4.js": "/movies-search/precache-manifest.c4f93b3ca63743cd621d3643833afbe4.js",
+    "precache-manifest.81b8ed3cd2142796e0ac4e1e4a0f7d41.js": "/movies-search/precache-manifest.81b8ed3cd2142796e0ac4e1e4a0f7d41.js",
     "service-worker.js": "/movies-search/service-worker.js",
     "static/css/2.10055323.chunk.css.map": "/movies-search/static/css/2.10055323.chunk.css.map",
     "static/css/main.5e5cae3d.chunk.css.map": "/movies-search/static/css/main.5e5cae3d.chunk.css.map",
-    "static/js/2.76543096.chunk.js.LICENSE.txt": "/movies-search/static/js/2.76543096.chunk.js.LICENSE.txt",
+    "static/js/2.8a040e74.chunk.js.LICENSE.txt": "/movies-search/static/js/2.8a040e74.chunk.js.LICENSE.txt",
     "static/media/App.css": "/movies-search/static/media/background_1920.22c1c199.jpg",
     "static/media/magnifier.svg": "/movies-search/static/media/magnifier.c2f608b6.svg",
     "static/media/styles.css": "/movies-search/static/media/revicons.2feb69cc.eot"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.5f5da1d4.js",
     "static/css/2.10055323.chunk.css",
-    "static/js/2.76543096.chunk.js",
+    "static/js/2.8a040e74.chunk.js",
     "static/css/main.5e5cae3d.chunk.css",
-    "static/js/main.08b34103.chunk.js"
+    "static/js/main.5a745052.chunk.js"
   ]
 }
