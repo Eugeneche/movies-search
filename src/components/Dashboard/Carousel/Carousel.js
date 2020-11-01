@@ -68,7 +68,6 @@ const CustomedCarousel = (props) => {
         slidesToSlide={3}
         swipeable
 /*         beforeChange={(nextSlide, { currentSlide, onMove }) => {
-          return alert('111');
           doSpeicalThing();
         }} */
         beforeChange={function(nextSlide) {

@@ -40,7 +40,17 @@ export const trailerAPI = {
     }
 }
 
+export const movieSearchingAPI = {
+    searchMovie(query) {
+        return instance.get(`search/movie?api_key=${API_KEY}&query=${query}`)
+    },
 
+    getNextSearchedMovies(query, page) {
+        return instance.get(`search/movie?api_key=${API_KEY}&query=${query}&page=${page}`)
+    }
+}
+
+/* https://api.themoviedb.org/3/search/movie?api_key=ee2385b3e1507413c162d500dc98115e&query=terminator */
 /* https://api.themoviedb.org/3/discover/movie?api_key=ee2385b3e1507413c162d500dc98115e&language=en-US&page=3&with_genres=99 
 
 https://api.themoviedb.org/3/movie/508570?api_key=ee2385b3e1507413c162d500dc98115e 

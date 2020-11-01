@@ -35,10 +35,10 @@ export const dashboardReducer = (state = initialState, action) => {
 }
 
 //action creators to loading movies 
-const loadPopularMovies = (movies) => ({type: LOAD_POPULAR_MOVIES, movies});
-const loadSeries = (movies) => ({type: LOAD_SERIES, movies});
-const loadFamilyMovies = (movies) => ({type: LOAD_FAMILY_MOVIES, movies});
-const loadDocumentaryMovies = (movies) => ({type: LOAD_DOCUMENTARY_MOVIES, movies});
+const loadPopularMovies = movies => ({type: LOAD_POPULAR_MOVIES, movies});
+const loadSeries = movies => ({type: LOAD_SERIES, movies});
+const loadFamilyMovies = movies => ({type: LOAD_FAMILY_MOVIES, movies});
+const loadDocumentaryMovies = movies => ({type: LOAD_DOCUMENTARY_MOVIES, movies});
 
 //thunks
 export const getPopularMovies = page => {
@@ -48,21 +48,21 @@ export const getPopularMovies = page => {
     }
 } 
 
-export const getSeries = (page) => {
+export const getSeries = page => {
     return (dispatch) => {
         getMoviesAPI.getSeries(page)
         .then(response => dispatch(loadSeries(response.data.results)));
     }
 }
 
-export const getFamilyMovies = (page) => {
+export const getFamilyMovies = page => {
     return (dispatch) => {
         getMoviesAPI.getFamilyMovies(page)
         .then(response => dispatch(loadFamilyMovies(response.data.results)));
     }
 }
 
-export const getDocumentaryMovies = (page) => {
+export const getDocumentaryMovies = page => {
     return (dispatch) => {
         getMoviesAPI.getDocumentaryMovies(page)
         .then(response => dispatch(loadDocumentaryMovies(response.data.results)));

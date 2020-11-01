@@ -41,7 +41,16 @@ export const getMovieInfo = (id) => {
 export const getTrailer = (id) => {
     return dispatch => {
         trailerAPI.getTrailer(id)
-        .then(response => dispatch(playTrailer(response.data.results[0].key)))
-        //.then(response => console.log(response.data.results[0].key))
+        //.then(response => response.data.results[0].key)
+        .then(response => {
+            if(response.data.results[0] !== undefined) {
+                dispatch(playTrailer(response.data.results[0].key))
+            } else {
+                dispatch(playTrailer(null))
+            }
+        }        
+            )
+
+        
     }
 }

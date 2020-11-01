@@ -1,0 +1,14 @@
+.submitButton {
+    position: relative;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    padding: 1px;
+    outline: none;
+    /* cursor: pointer; */
+}
+
+button img {
+    width: 18px;
+    height: 18px;
+}

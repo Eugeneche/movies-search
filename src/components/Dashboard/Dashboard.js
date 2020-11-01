@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './Dashboard.module.css';
+import React, { Fragment } from 'react';
 import CustomedCarousel from './Carousel/Carousel';
 import MovieItem from '../MovieItem/MovieItem';
 import { posterBaseURL } from '../../API/API';
 import movieImgPlaceholder from '../../img/movie_img_placeholder.jpg';
 import { NavLink } from 'react-router-dom';
+import HeaderContainer from '../Header/HeaderContainer';
 
 
 class Dashboard extends React.Component {
@@ -22,8 +22,6 @@ class Dashboard extends React.Component {
         this.props.getFamilyMovies(this.state.familyCurrentPage);
         this.props.getDocumentaryMovies(this.state.documentaryCurrentPage);
     }
-
-
 
     addNewPopularMovies = () => {
         this.setState({popularCurrentPage: this.state.popularCurrentPage + 1});
@@ -46,12 +44,10 @@ class Dashboard extends React.Component {
     }
     
     render() {
-        let popularMovies = this.props.popularMovies.map((movie) => {
-            return <div key={movie.id}>               
-                <NavLink to={'/movie/' + movie.id}> 
+        let popularMovies = this.props.popularMovies.map(movie => {
+            return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
                 </NavLink>
-            </div>
             
         });
 
@@ -79,16 +75,17 @@ class Dashboard extends React.Component {
             </div>
         });
 
-        return <div className={styles.dashboard}> 
-               <h1>Popular movies</h1>
-               <CustomedCarousel genreList={popularMovies} addNewMovies={this.addNewPopularMovies} />
-               <h1>Popular series</h1>
-               <CustomedCarousel genreList={series} addNewMovies={this.addNewSeriesMovies} />
-               <h1>Family movies</h1>
-               <CustomedCarousel genreList={familyMovies} addNewMovies={this.addNewFamilyMovies} /> 
-               <h1>Documentary movies</h1>
-               <CustomedCarousel genreList={documentaryMovies} addNewMovies={this.addNewDocumentaryMovies} />               
-            </div>
+        return <Fragment>
+            <HeaderContainer />
+            <h1>Popular movies</h1>
+            <CustomedCarousel genreList={popularMovies} addNewMovies={this.addNewPopularMovies} />
+            <h1>Popular series</h1>
+            <CustomedCarousel genreList={series} addNewMovies={this.addNewSeriesMovies} />
+            <h1>Family movies</h1>
+            <CustomedCarousel genreList={familyMovies} addNewMovies={this.addNewFamilyMovies} /> 
+            <h1>Documentary movies</h1>
+            <CustomedCarousel genreList={documentaryMovies} addNewMovies={this.addNewDocumentaryMovies} />               
+        </Fragment> 
     
     }
 }
