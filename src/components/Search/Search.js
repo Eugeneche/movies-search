@@ -10,7 +10,7 @@ let SearchForm = props => {
     const { handleSubmit } = props;
     return <form onSubmit={handleSubmit} style={{display: 'inline'}}>
         <Field name='searching' component='input' type='text' />
-         {!props.query &&
+{/*          {!props.query &&
                         <button className={styles.submitButton} type='submit' disabled>
                         <img src={magnifier} alt='magnifier'/>
          </button>}
@@ -20,14 +20,14 @@ let SearchForm = props => {
                                 <img src={magnifier} alt='magnifier'/>
                         </button>
                     </NavLink>
-        } 
+        }  */}
 
 
-{/* <NavLink to='/results'>
+                    <NavLink to='/results'>
                         <button className={styles.submitButton} type='submit'>
                                 <img src={magnifier} alt='magnifier'/>
                         </button>
-                    </NavLink> */}
+                    </NavLink> 
 
     </form>
 }
