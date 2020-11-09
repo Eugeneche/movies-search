@@ -1,29 +1,24 @@
 import React from 'react';
 import SearchForm from '../Search/Search';
-import { NavLink } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from './Header.module.css';
 
 
-class Header extends React.Component {
+const Header = props => {
+    
+    let history = useHistory();
 
-/*     s = () => {
-        let query = this.props.query;
-        this.props.submit(query); 
-      } */
-
-/*       submit = values => {
-        this.props.getSearchingResults(query); 
-        alert(values);
-      } */
-
-    render() {
-        return <header>
-            <SearchForm onSubmit={this.submit} />
-            <NavLink to='/'>
-                <span className={styles.logo}>Movies<span className={styles.sublogo}>GO</span></span>
-            </NavLink>
-        </header>
+    const submit = values => {
+        props.getSearchingResults(values.searching); 
+        history.location.pathname === '/results' && props.restoreInitValuePageForNextMovies();
+        history.push(`/results`); 
     }
+        return <header>
+            <SearchForm onSubmit={submit} />
+            <Link to='/'>
+                <span className={styles.logo}>Movies<span className={styles.sublogo}>GO</span></span>
+            </Link>
+        </header>
 }
 
 export default Header;

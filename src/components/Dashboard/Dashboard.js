@@ -5,6 +5,8 @@ import { posterBaseURL } from '../../API/API';
 import movieImgPlaceholder from '../../img/movie_img_placeholder.jpg';
 import { NavLink } from 'react-router-dom';
 import HeaderContainer from '../Header/HeaderContainer';
+//import Preloader from '../../img/Preloader';
+
 
 
 class Dashboard extends React.Component {
@@ -21,25 +23,48 @@ class Dashboard extends React.Component {
         this.props.getSeries(this.state.seriesCurrentPage);
         this.props.getFamilyMovies(this.state.familyCurrentPage);
         this.props.getDocumentaryMovies(this.state.documentaryCurrentPage);
+
+        this.incrementPopularCurrentPage();
+        this.incrementSeriesCurrentPage();
+        this.incrementFamilyCurrentPage();
+        this.incrementDocumentaryCurrentPage();  
+    }
+
+    incrementPopularCurrentPage = () => {
+        this.setState( state => ({popularCurrentPage: state.popularCurrentPage + 1}));
+    }
+
+    incrementSeriesCurrentPage = () => {
+        this.setState( state => ({seriesCurrentPage: state.seriesCurrentPage + 1}));
+    }
+
+    incrementFamilyCurrentPage = () => {
+        this.setState( state => ({familyCurrentPage: state.familyCurrentPage + 1}));
+    }
+
+    incrementDocumentaryCurrentPage = () => {
+        this.setState( state => ({documentaryCurrentPage: state.documentaryCurrentPage + 1}));
     }
 
     addNewPopularMovies = () => {
-        this.setState({popularCurrentPage: this.state.popularCurrentPage + 1});
+        this.showPreloader();
+        this.incrementPopularCurrentPage();
         this.props.getPopularMovies(this.state.popularCurrentPage);
+        this.hidePreloader();
     }
 
     addNewSeriesMovies = () => {
-        this.setState({seriesCurrentPage: this.state.seriesCurrentPage + 1});
+        this.incrementSeriesCurrentPage();
         this.props.getSeries(this.state.seriesCurrentPage);
     }
 
     addNewFamilyMovies = () => {
-        this.setState({familyCurrentPage: this.state.familyCurrentPage + 1});
+        this.incrementFamilyCurrentPage();
         this.props.getFamilyMovies(this.state.familyCurrentPage);
     }
 
     addNewDocumentaryMovies = () => {
-        this.setState({documentaryCurrentPage: this.state.documentaryCurrentPage + 1});
+        this.incrementDocumentaryCurrentPage();
         this.props.getDocumentaryMovies(this.state.documentaryCurrentPage);
     }
     
@@ -47,35 +72,28 @@ class Dashboard extends React.Component {
         let popularMovies = this.props.popularMovies.map(movie => {
             return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
-                </NavLink>
-            
+                </NavLink>           
         });
 
         let series = this.props.popularSeries.map(movie => {
-            return <div key={movie.id}>               
-                <NavLink to={'/movie/' + movie.id}> 
+            return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
                 </NavLink>
-            </div>
         });
 
-         let familyMovies = this.props.familyMovies.map(movie => {
-            return <div key={movie.id}>               
-                <NavLink to={'/movie/' + movie.id}> 
+        let familyMovies = this.props.familyMovies.map(movie => {
+            return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
                 </NavLink>
-            </div>
         });
 
         let documentaryMovies = this.props.documentaryMovies.map(movie => {
-            return <div key={movie.id}>               
-                <NavLink to={'/movie/' + movie.id}> 
+            return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
                 </NavLink>
-            </div>
         });
 
-        return <Fragment>
+        return <Fragment>     
             <HeaderContainer />
             <h1>Popular movies</h1>
             <CustomedCarousel genreList={popularMovies} addNewMovies={this.addNewPopularMovies} />
@@ -84,9 +102,8 @@ class Dashboard extends React.Component {
             <h1>Family movies</h1>
             <CustomedCarousel genreList={familyMovies} addNewMovies={this.addNewFamilyMovies} /> 
             <h1>Documentary movies</h1>
-            <CustomedCarousel genreList={documentaryMovies} addNewMovies={this.addNewDocumentaryMovies} />               
-        </Fragment> 
-    
+            <CustomedCarousel genreList={documentaryMovies} addNewMovies={this.addNewDocumentaryMovies} />             
+        </Fragment >    
     }
 }
 

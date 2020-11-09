@@ -4,6 +4,7 @@ const LOAD_POPULAR_MOVIES = 'LOAD-POPULAR-MOVIES';
 const LOAD_SERIES = 'LOAD-SERIES';
 const LOAD_FAMILY_MOVIES = 'LOAD-FAMILY-MOVIES';
 const LOAD_DOCUMENTARY_MOVIES = 'LOAD-DOCUMENTARY-MOVIES';
+const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
 
 
 
@@ -11,7 +12,8 @@ let initialState = {
     popularMovies: [],
     popularSeries: [],
     familyMovies: [],
-    documentaryMovies: []
+    documentaryMovies: [],
+    isFetching: false
 };
 
 export const dashboardReducer = (state = initialState, action) => {
@@ -28,6 +30,10 @@ export const dashboardReducer = (state = initialState, action) => {
 
         case LOAD_DOCUMENTARY_MOVIES:
             return { ...state, documentaryMovies: [ ...state.documentaryMovies, ...action.movies]}
+
+        case TOGGLE_IS_FETCHING:
+            return { ...state, isFetching: action.isFetching}
+
         default:
             return state;
     }
@@ -39,6 +45,7 @@ const loadPopularMovies = movies => ({type: LOAD_POPULAR_MOVIES, movies});
 const loadSeries = movies => ({type: LOAD_SERIES, movies});
 const loadFamilyMovies = movies => ({type: LOAD_FAMILY_MOVIES, movies});
 const loadDocumentaryMovies = movies => ({type: LOAD_DOCUMENTARY_MOVIES, movies});
+//const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 //thunks
 export const getPopularMovies = page => {

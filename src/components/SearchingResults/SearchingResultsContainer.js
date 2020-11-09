@@ -7,57 +7,33 @@ import { getSearchingResults, getSearchingResultsNextMovies } from '../../redux/
 class SearchingResultsContainer extends React.Component {
 
     state={
-        currentQuery: this.props.query.values.searching,
-        searchedCurrentPage: 1
+        currentQuery: this.props.query,
+        searchedCurrentPage: 2
     }
 
-    submit = query => {
-        this.setState({
-            currentQuery: query
-        })
-        this.incrementCurrentPage();
-        this.props.getSearchingResults(query); 
-        //alert(query);
-      }
-
-    componentDidMount() {
-/*         if(!this.state.currentQuery) {
-            return false
-        } else {
-            let q = this.state.currentQuery;
-            this.submit(q);
-            alert(q.length);
-        }  */
-        this.submit(this.state.currentQuery);
+    restoreInitValuePageForNextMovies = () => {
+        this.setState( state => ({searchedCurrentPage: state.searchedCurrentPage = 2}));
     }
 
     incrementCurrentPage = () => {
-        this.setState({
-            searchedCurrentPage: this.state.searchedCurrentPage + 1
-        })
+        this.setState( state => ({searchedCurrentPage: state.searchedCurrentPage + 1}));
     }
 
-/*     componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if(prevProps.query !== this.props.query) {
-            this.props.getSearchingResultsNextMovies('', this.state.searchedCurrentPage);
-        }
-
-    } */
-/* form: {
-    search: {
-        values: {
-            searching: '...'
-        }
+            this.setState({ currentQuery: this.props.query });
+        }       
     }
-} */
+
     render() {
-        return <SearchingResults {...this.props} query={this.props.query} results={this.props.results} getSearchingResults={this.props.getSearchingResults} getSearchingResultsNextMovies={this.props.getSearchingResultsNextMovies} /> 
+        return <SearchingResults {...this.props} query={this.state.currentQuery} page={this.state.searchedCurrentPage} incrementCurrentPage={this.incrementCurrentPage} restoreInitValuePageForNextMovies={this.restoreInitValuePageForNextMovies} results={this.props.results} getSearchingResults={this.props.getSearchingResults} getSearchingResultsNextMovies={this.props.getSearchingResultsNextMovies} /> 
     }
 }
 
 const mapStateToProps = state => ({
     results: state.searchingResults.searchingResults,
-    query: state.form.search
+    query: state.searchingResults.query,
+    isFetching: state.searchingResults.isFetching
 })
 
 export default connect(mapStateToProps, {getSearchingResults, getSearchingResultsNextMovies})(SearchingResultsContainer);

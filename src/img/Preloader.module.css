@@ -1,0 +1,15 @@
+.loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #8080804f;
+    z-index: 999;
+    text-align: center;
+}
+
+.loader img {
+    margin-top: 50px;
+}
+

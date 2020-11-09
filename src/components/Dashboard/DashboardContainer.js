@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Dashboard from './Dashboard';
 import { getPopularMovies, getSeries, getFamilyMovies, getDocumentaryMovies } from '../../redux/reducers/dashboardReducer';
+//import Preloader from '../../img/Preloader';
 
 
-class DashboardContainer extends React.Component {
 
-    render() {
-        return <Dashboard {...this.props} />
-    }
+const DashboardContainer = props => {
+
+    return <Fragment>
+            <Dashboard {...props} isFetching={props.isFetching} />
+        </Fragment>
 }
 
 let mapStateToProps = state => ({
         popularMovies: state.dashboard.popularMovies,
         popularSeries: state.dashboard.popularSeries,
         familyMovies: state.dashboard.familyMovies,
-        documentaryMovies: state.dashboard.documentaryMovies
+        documentaryMovies: state.dashboard.documentaryMovies,
+        isFetching: state.dashboard.isFetching
     });
 
 export default connect(mapStateToProps, {getPopularMovies, getSeries, getFamilyMovies, getDocumentaryMovies})(DashboardContainer);

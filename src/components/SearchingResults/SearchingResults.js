@@ -8,19 +8,26 @@ import HeaderContainer from '../Header/HeaderContainer';
 
 class SearchingResults extends React.Component {
 
+    addNextMovies = () => {
+        let q = this.props.query;
+        let p =this.props.page;
+        this.props.getSearchingResultsNextMovies(q, p);
+        this.props.incrementCurrentPage();
+    }
+
     render() {
 
         let searchList = this.props.results.map(movie => {
-            return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
+            return <NavLink to={'/movie/' + movie.id} target='blanc' key={movie.id}> 
                 <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
             </NavLink>
         });
 
         return <Fragment>
-            <HeaderContainer />
+            <HeaderContainer restoreInitValuePageForNextMovies={this.props.restoreInitValuePageForNextMovies}/>
             {/* Second title - no one parameter  */}
-            <h2>The following movies were found on request '...'</h2>
-            <CustomedCarousel genreList={searchList} addNewMovies={this.props.getSearchingResultsNextMovies} />               
+            <h2>The following movies were found on request '{this.props.query}'</h2>
+            <CustomedCarousel genreList={searchList} addNewMovies={this.addNextMovies} />               
         </Fragment>
     }
 }
