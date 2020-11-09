@@ -18,7 +18,7 @@ class SearchingResults extends React.Component {
     render() {
 
         let searchList = this.props.results.map(movie => {
-            return <NavLink to={'/movie/' + movie.id} target='blanc' key={movie.id}> 
+            return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                 <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
             </NavLink>
         });
