@@ -26,7 +26,14 @@ class SearchingResultsContainer extends React.Component {
     }
 
     render() {
-        return <SearchingResults {...this.props} query={this.state.currentQuery} page={this.state.searchedCurrentPage} incrementCurrentPage={this.incrementCurrentPage} restoreInitValuePageForNextMovies={this.restoreInitValuePageForNextMovies} results={this.props.results} getSearchingResults={this.props.getSearchingResults} getSearchingResultsNextMovies={this.props.getSearchingResultsNextMovies} /> 
+        return <SearchingResults {...this.props} 
+            query={this.state.currentQuery} 
+            page={this.state.searchedCurrentPage} 
+            incrementCurrentPage={this.incrementCurrentPage} 
+            restoreInitValuePageForNextMovies={this.restoreInitValuePageForNextMovies} 
+            results={this.props.results} 
+            getSearchingResults={this.props.getSearchingResults} 
+            getSearchingResultsNextMovies={this.props.getSearchingResultsNextMovies} /> 
     }
 }
 

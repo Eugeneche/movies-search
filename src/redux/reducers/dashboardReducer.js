@@ -45,13 +45,17 @@ const loadPopularMovies = movies => ({type: LOAD_POPULAR_MOVIES, movies});
 const loadSeries = movies => ({type: LOAD_SERIES, movies});
 const loadFamilyMovies = movies => ({type: LOAD_FAMILY_MOVIES, movies});
 const loadDocumentaryMovies = movies => ({type: LOAD_DOCUMENTARY_MOVIES, movies});
-//const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
+const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 //thunks
 export const getPopularMovies = page => {
     return (dispatch) => {
+        dispatch(toggleIsFetching(true));
         getMoviesAPI.getPopular(page)
-        .then(response => dispatch(loadPopularMovies(response.data.results)));
+        .then(response => {
+            dispatch(loadPopularMovies(response.data.results))
+            dispatch(toggleIsFetching(false));
+        });
     }
 } 
 

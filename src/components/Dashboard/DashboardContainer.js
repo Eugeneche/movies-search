@@ -9,6 +9,7 @@ import { getPopularMovies, getSeries, getFamilyMovies, getDocumentaryMovies } fr
 const DashboardContainer = props => {
 
     return <Fragment>
+          {/* {props.isFetching && <Preloader />} */}
             <Dashboard {...props} isFetching={props.isFetching} />
         </Fragment>
 }

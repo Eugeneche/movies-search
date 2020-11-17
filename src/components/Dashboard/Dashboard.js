@@ -15,7 +15,8 @@ class Dashboard extends React.Component {
         popularCurrentPage: 1,
         seriesCurrentPage: 1,
         familyCurrentPage: 1,
-        documentaryCurrentPage: 1
+        documentaryCurrentPage: 1,
+        isFetching: this.props.isFetching
     }
 
     componentDidMount() {
@@ -27,8 +28,16 @@ class Dashboard extends React.Component {
         this.incrementPopularCurrentPage();
         this.incrementSeriesCurrentPage();
         this.incrementFamilyCurrentPage();
-        this.incrementDocumentaryCurrentPage();  
+        this.incrementDocumentaryCurrentPage();
     }
+
+/*     isFetchingTrue = () =>{
+        this.setState( state => ({isFetching: state.isFetching = true}));
+    }
+
+    isFetchingFalse = () =>{
+        this.setState( state => ({isFetching: state.isFetching = false}));
+    } */
 
     incrementPopularCurrentPage = () => {
         this.setState( state => ({popularCurrentPage: state.popularCurrentPage + 1}));
@@ -93,7 +102,7 @@ class Dashboard extends React.Component {
                 </NavLink>
         });
 
-        return <Fragment>     
+        return <Fragment>            
             <HeaderContainer />
             <h1>Popular movies</h1>
             <CustomedCarousel genreList={popularMovies} addNewMovies={this.addNewPopularMovies} />
@@ -103,7 +112,7 @@ class Dashboard extends React.Component {
             <CustomedCarousel genreList={familyMovies} addNewMovies={this.addNewFamilyMovies} /> 
             <h1>Documentary movies</h1>
             <CustomedCarousel genreList={documentaryMovies} addNewMovies={this.addNewDocumentaryMovies} />             
-        </Fragment >    
+        </Fragment>    
     }
 }
 

@@ -9,7 +9,8 @@ const Header = props => {
     let history = useHistory();
 
     const submit = values => {
-        props.getSearchingResults(values.searching); 
+        values && props.getSearchingResults(values.searching); 
+        //props.getSearchingResults(values.searching); 
         history.location.pathname === '/results' && props.restoreInitValuePageForNextMovies();
         history.push(`/results`); 
     }
