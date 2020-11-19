@@ -1,5 +1,5 @@
-import { stopSubmit } from 'redux-form';
 import { movieSearchingAPI } from '../../API/API';
+
 const SEARCH_MOVIE = 'SEARCH-MOVIE';
 const NEXT_SEARCHED_MOVIE = 'NEXT-SEARCHED-MOVIE';
 const SET_QUERY = 'SET-QUERY';

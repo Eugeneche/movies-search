@@ -56,10 +56,8 @@ class Dashboard extends React.Component {
     }
 
     addNewPopularMovies = () => {
-        this.showPreloader();
         this.incrementPopularCurrentPage();
         this.props.getPopularMovies(this.state.popularCurrentPage);
-        this.hidePreloader();
     }
 
     addNewSeriesMovies = () => {

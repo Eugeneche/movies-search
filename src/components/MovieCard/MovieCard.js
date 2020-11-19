@@ -8,7 +8,7 @@ const MovieCard = props => {
 
     return <Fragment>
         <HeaderContainer />
-        <h1>{props.title}</h1>
+        <h1 className={style.infoBlock}>{props.title}</h1>
         <div className={style.infoBlock}>
             <div className={style.description}>{props.description}</div>
             <div className={style.rating}>Rating: {props.rating}</div>

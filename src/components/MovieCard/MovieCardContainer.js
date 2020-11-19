@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MovieCard from './MovieCard';
-import { getMovieInfo, getTrailer } from '../../redux/reducers/selectedMovieReducer'
+import { getMovieInfo, getTrailer } from '../../redux/reducers/selectedMovieReducer';
+import { getSelectedMovieIdSelector, getSelectedMovieTitleSelector, getSelectedMovieDescriptionSelector, getSelectedMovieRatingSelector, getSelectedMovieYoutubeKeySelector } from '../../redux/selectors/selectedMovieSelector';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 
@@ -18,11 +19,11 @@ class MovieCardContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    id: state.selectedMovie.id,
-    title: state.selectedMovie.title,
-    description: state.selectedMovie.description,
-    rating: state.selectedMovie.rating,
-    youtubeKey: state.selectedMovie.youtubeKey
+    id: getSelectedMovieIdSelector(state),
+    title: getSelectedMovieTitleSelector(state),
+    description: getSelectedMovieDescriptionSelector(state),
+    rating: getSelectedMovieRatingSelector(state),
+    youtubeKey: getSelectedMovieYoutubeKeySelector(state)
 });
 
 export default compose(

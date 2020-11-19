@@ -25,38 +25,38 @@ const CustomedCarousel = (props) => {
           desktop: {
             breakpoint: {
               max: 4000,
-              min: 1120
+              min: 1200
             },
             items: 5,
             partialVisibilityGutter: 40
           },
           laptop: {
             breakpoint: {
-              max: 1120,
+              max: 1200,
               min: 980
             },
-            items: 5,
+            items: 4,
             partialVisibilityGutter: 40
           },
           tablet: {
             breakpoint: {
               max: 980,
-              min: 768
+              min: 660
             },
             items: 4,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 35
           },
           mobileWide: {
             breakpoint: {
-              max: 768,
-              min: 464
+              max: 660,
+              min: 500
             },
             items: 3,
             partialVisibilityGutter: 30
           },
           mobile: {
             breakpoint: {
-              max: 464,
+              max: 500,
               min: 0
             },
             items: 2,

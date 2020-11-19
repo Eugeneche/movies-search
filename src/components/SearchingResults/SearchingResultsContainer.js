@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SearchingResults from './SearchingResults';
 import { getSearchingResults, getSearchingResultsNextMovies } from '../../redux/reducers/searchReducer';
+import { getSearchingResultsSelector, getQuerySelector, getIsFetchingSearchingResultsSelector } from '../../redux/selectors/searchSelector';
 
 
 class SearchingResultsContainer extends React.Component {
@@ -38,9 +39,9 @@ class SearchingResultsContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    results: state.searchingResults.searchingResults,
-    query: state.searchingResults.query,
-    isFetching: state.searchingResults.isFetching
+    results: getSearchingResultsSelector(state),
+    query: getQuerySelector(state),
+    isFetching: getIsFetchingSearchingResultsSelector(state)
 })
 
 export default connect(mapStateToProps, {getSearchingResults, getSearchingResultsNextMovies})(SearchingResultsContainer);

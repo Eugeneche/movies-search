@@ -34,7 +34,7 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-    h1 {
+    h1.infoBlock {
         width: 80%;
         margin: 10px auto 20px auto ;
     }
@@ -58,7 +58,7 @@ h2 {
 }
 
 @media screen and (max-width: 550px) {
-    h1 {
+    h1.infoBlock {
         width: 95%;
     }
     .infoBlock {

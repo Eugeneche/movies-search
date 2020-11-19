@@ -2,9 +2,9 @@ form {
     position: relative;
 }
 
-
 .inputBlock {
     float: left;
+    margin: 20px 0;
 }
 
 input.error {
@@ -17,18 +17,28 @@ input.error {
     height: 24px;
     padding: 1px;
     outline: none;
-    /* cursor: pointer; */
+    margin: 20px 0;
 }
 
 .inputError {
     position: absolute;
     left: 210px;
     top: 1px;
-    color: rgb(146, 146, 146);
-    
+    color: rgb(146, 146, 146);  
 }
 
 button img {
     width: 18px;
     height: 18px;
+}
+
+@media screen and (max-width: 500px) {
+    .submitButton {
+        position: static;
+        margin: 20px 0;
+    }
+
+    input {
+        width: 120px;
+    }
 }

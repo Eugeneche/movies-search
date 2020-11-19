@@ -6,8 +6,6 @@ const LOAD_FAMILY_MOVIES = 'LOAD-FAMILY-MOVIES';
 const LOAD_DOCUMENTARY_MOVIES = 'LOAD-DOCUMENTARY-MOVIES';
 const TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
 
-
-
 let initialState = {
     popularMovies: [],
     popularSeries: [],

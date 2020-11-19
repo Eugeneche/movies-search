@@ -7,6 +7,7 @@ header {
 .logo {
     position: absolute;
     right: 20px;
+    top: 11px;
     font-size: 30px;
     font-weight: normal;
     text-align: right;
@@ -17,13 +18,14 @@ header {
     font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     header {
-        position: static;
-        text-align: center;
+        position: relative;
     }
 
     .logo {
-        position: static;
+        font-size: 26px;
+        right: 12px;
+        top: 11px;
     }
 }

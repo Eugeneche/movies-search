@@ -15,14 +15,27 @@ body {
 
 @media screen and (max-width: 1200px) {
     .wrapper {
-        max-width: 980px;
+        max-width: 900px;
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 880px) {
     .wrapper {
-        max-width: 860px;
+        max-width: 660px;
     }
 }
+
+@media screen and (max-width: 660px) {
+    .wrapper {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        max-width: 330px;
+    }
+}
+
 
 

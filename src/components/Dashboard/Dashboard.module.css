@@ -36,8 +36,13 @@ a {
     transition: ease .2s;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 880px) {
     .movieItem { 
-        width: 90.90909%;
+        width: 150px;
+        height: 350px;
+    }
+
+    .movieItem img { 
+        height: 225px;
     }
 }

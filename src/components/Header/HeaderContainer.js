@@ -5,13 +5,13 @@ import Header from './Header';
 
 class HeaderContainer extends React.Component {
 
+    /* restoreInitValuePageForNextMovies is passed from SearchingResulsContainer */
+
     render() {
         return <Header restoreInitValuePageForNextMovies={this.props.restoreInitValuePageForNextMovies} getSearchingResults={this.props.getSearchingResults} />
     }  
 } 
 
-const mapStateToProps = state => ({ 
-    initPageForNextMovies: state.searchingResults.initPageForNextMovies
-});
+const mapStateToProps = state => ({ });
 
 export default HeaderContainer = connect(mapStateToProps, {getSearchingResults})(HeaderContainer);
