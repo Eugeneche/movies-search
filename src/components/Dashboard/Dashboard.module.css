@@ -15,7 +15,7 @@ a {
 
 .movieItem { 
     width: 200px;
-    height: 400px;
+    height: 440px;
     background: #000;
     border: 1px solid #ffff00;   
     overflow: hidden;
@@ -36,21 +36,41 @@ a {
     transition: ease .2s;
 }
 
-.movieTitle {
+h2.movieTitle {
     margin-left: 5px;
+    color: #ffd700;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 3px;
 }
 
 .genres {
+    width: 90%;
     font-size: 10px;
+    color: #f0e68c;
+    padding-left: 3px;
+}
+
+.genres span {
+    font-size: 10px;
+    background: #8080805e;
+    margin: 2px 3px;
+    padding: 1px 5px;
+    border: .5px solid #acac089a;
+    display: inline-table;
 }
 
 @media screen and (max-width: 880px) {
     .movieItem { 
         width: 150px;
-        height: 350px;
+        height: 375px;
     }
 
     .movieItem img { 
         height: 225px;
+    }
+
+    h2.movieTitle {
+        font-size: 15px;
     }
 }

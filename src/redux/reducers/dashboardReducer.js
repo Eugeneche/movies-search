@@ -56,7 +56,6 @@ export const dashboardReducer = (state = initialState, action) => {
         default:
             return state;
     }
-
 }
 
 //action creators to loading movies 

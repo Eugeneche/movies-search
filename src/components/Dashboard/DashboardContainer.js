@@ -21,7 +21,7 @@ let mapStateToProps = state => ({
         familyMovies: getFamilyMoviesSelector(state),
         documentaryMovies: getDocumentaryMoviesSelector(state),
         isFetching: getIsFetchingDashboardSelector(state),
-        genres: getGenres(state)
+        allGenres: getGenres(state)
     });
 
 export default connect(mapStateToProps, {getPopularMovies, getSeries, getFamilyMovies, getDocumentaryMovies})(DashboardContainer);
