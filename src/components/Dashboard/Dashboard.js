@@ -74,11 +74,11 @@ class Dashboard extends React.Component {
         this.incrementDocumentaryCurrentPage();
         this.props.getDocumentaryMovies(this.state.documentaryCurrentPage);
     }
-    
+
     render() {
         let popularMovies = this.props.popularMovies.map(movie => {
             return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
-                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} />
+                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} genres={this.props.genres} />
                 </NavLink>           
         });
 

@@ -5,8 +5,8 @@ h1 {
 h2 {
     color: #ffd700;
     font-weight: 600;
-    font-size: 0.9em;
-    margin: 10px;
+    font-size: 1.1em;
+    margin-top: 30px;
 }
 
 a {
@@ -34,6 +34,14 @@ a {
 .movieItem img:hover {
     transform: scale(1.02);
     transition: ease .2s;
+}
+
+.movieTitle {
+    margin-left: 5px;
+}
+
+.genres {
+    font-size: 10px;
 }
 
 @media screen and (max-width: 880px) {

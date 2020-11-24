@@ -17,3 +17,7 @@ export const getDocumentaryMoviesSelector = state => {
 export const getIsFetchingDashboardSelector = state => {
     return state.dashboard.isFetching;
 }
+
+export const getGenres = state => {
+    return state.dashboard.genres;
+}

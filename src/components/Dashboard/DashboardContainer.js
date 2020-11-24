@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Dashboard from './Dashboard';
 import { getPopularMovies, getSeries, getFamilyMovies, getDocumentaryMovies } from '../../redux/reducers/dashboardReducer';
-import { getPopularMoviesSelector, getPopularSeriesSelector, getFamilyMoviesSelector, getDocumentaryMoviesSelector, getIsFetchingDashboardSelector } from '../../redux/selectors/dashboardSelectors';
+import { getPopularMoviesSelector, getPopularSeriesSelector, getFamilyMoviesSelector, getDocumentaryMoviesSelector, getIsFetchingDashboardSelector, getGenres } from '../../redux/selectors/dashboardSelectors';
 //import Preloader from '../../img/Preloader';
 
 
@@ -20,7 +20,8 @@ let mapStateToProps = state => ({
         popularSeries: getPopularSeriesSelector(state),
         familyMovies: getFamilyMoviesSelector(state),
         documentaryMovies: getDocumentaryMoviesSelector(state),
-        isFetching: getIsFetchingDashboardSelector(state)
+        isFetching: getIsFetchingDashboardSelector(state),
+        genres: getGenres(state)
     });
 
 export default connect(mapStateToProps, {getPopularMovies, getSeries, getFamilyMovies, getDocumentaryMovies})(DashboardContainer);
