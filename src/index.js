@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 ReactDOM.render(
-  <BrowserRouter basename="/movies-search">
+  <BrowserRouter>
   {/* <React.StrictMode> */}
     
       <Provider store={store}>

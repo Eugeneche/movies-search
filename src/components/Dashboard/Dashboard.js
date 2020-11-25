@@ -79,25 +79,25 @@ class Dashboard extends React.Component {
         let popularMovies = this.props.popularMovies.map(movie => {
             return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title}
-                    thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} />
+                    thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} rating={movie.vote_average}  />
                 </NavLink>           
         });
 
         let series = this.props.popularSeries.map(movie => {
             return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
-                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres}  />
+                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} rating={movie.vote_average} />
                 </NavLink>
         });
 
         let familyMovies = this.props.familyMovies.map(movie => {
             return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
-                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres}  />
+                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} rating={movie.vote_average} />
                 </NavLink>
         });
 
         let documentaryMovies = this.props.documentaryMovies.map(movie => {
             return <NavLink to={'/movie/' + movie.id} key={movie.id}> 
-                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} />
+                    <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} rating={movie.vote_average} />
                 </NavLink>
         });
 

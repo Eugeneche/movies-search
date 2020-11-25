@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../Dashboard/Dashboard.module.css';
-
+import SimpleRating from '../SimpleRating/SimpleRating.js';
 
 const MovieItem = (props) => {
     const genres = props.thisMovieGenres.map(genre => {
@@ -13,6 +13,7 @@ const MovieItem = (props) => {
         <div className={styles.genres}>
             {genres}
         </div>
+        <SimpleRating value={props.rating} />
     </div>
 }
 
