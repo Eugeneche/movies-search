@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/movies-search/static/css/main.dcacadc0.chunk.css",
-    "main.js": "/movies-search/static/js/main.83ed3864.chunk.js",
-    "main.js.map": "/movies-search/static/js/main.83ed3864.chunk.js.map",
+    "main.css": "/movies-search/static/css/main.09631a58.chunk.css",
+    "main.js": "/movies-search/static/js/main.3027be47.chunk.js",
+    "main.js.map": "/movies-search/static/js/main.3027be47.chunk.js.map",
     "runtime-main.js": "/movies-search/static/js/runtime-main.5f5da1d4.js",
     "runtime-main.js.map": "/movies-search/static/js/runtime-main.5f5da1d4.js.map",
     "static/css/2.10055323.chunk.css": "/movies-search/static/css/2.10055323.chunk.css",
-    "static/js/2.50b669e1.chunk.js": "/movies-search/static/js/2.50b669e1.chunk.js",
-    "static/js/2.50b669e1.chunk.js.map": "/movies-search/static/js/2.50b669e1.chunk.js.map",
+    "static/js/2.d11fc4cd.chunk.js": "/movies-search/static/js/2.d11fc4cd.chunk.js",
+    "static/js/2.d11fc4cd.chunk.js.map": "/movies-search/static/js/2.d11fc4cd.chunk.js.map",
     "index.html": "/movies-search/index.html",
-    "precache-manifest.b8438eef7c3a80fdc6913c7ddc54cd8e.js": "/movies-search/precache-manifest.b8438eef7c3a80fdc6913c7ddc54cd8e.js",
+    "precache-manifest.71d8edc2cb595ae0353f49f9f85bdf6c.js": "/movies-search/precache-manifest.71d8edc2cb595ae0353f49f9f85bdf6c.js",
     "service-worker.js": "/movies-search/service-worker.js",
     "static/css/2.10055323.chunk.css.map": "/movies-search/static/css/2.10055323.chunk.css.map",
-    "static/css/main.dcacadc0.chunk.css.map": "/movies-search/static/css/main.dcacadc0.chunk.css.map",
-    "static/js/2.50b669e1.chunk.js.LICENSE.txt": "/movies-search/static/js/2.50b669e1.chunk.js.LICENSE.txt",
+    "static/css/main.09631a58.chunk.css.map": "/movies-search/static/css/main.09631a58.chunk.css.map",
+    "static/js/2.d11fc4cd.chunk.js.LICENSE.txt": "/movies-search/static/js/2.d11fc4cd.chunk.js.LICENSE.txt",
     "static/media/App.css": "/movies-search/static/media/background_1920.22c1c199.jpg",
     "static/media/magnifier.svg": "/movies-search/static/media/magnifier.c2f608b6.svg",
     "static/media/styles.css": "/movies-search/static/media/revicons.2feb69cc.eot"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.5f5da1d4.js",
     "static/css/2.10055323.chunk.css",
-    "static/js/2.50b669e1.chunk.js",
-    "static/css/main.dcacadc0.chunk.css",
-    "static/js/main.83ed3864.chunk.js"
+    "static/js/2.d11fc4cd.chunk.js",
+    "static/css/main.09631a58.chunk.css",
+    "static/js/main.3027be47.chunk.js"
   ]
 }
