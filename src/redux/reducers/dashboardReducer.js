@@ -52,6 +52,7 @@ export const dashboardReducer = (state = initialState, action) => {
 
         case TOGGLE_IS_FETCHING:
             return { ...state, isFetching: action.isFetching}
+            
 
         default:
             return state;
@@ -63,16 +64,16 @@ const loadPopularMovies = movies => ({type: LOAD_POPULAR_MOVIES, movies});
 const loadSeries = movies => ({type: LOAD_SERIES, movies});
 const loadFamilyMovies = movies => ({type: LOAD_FAMILY_MOVIES, movies});
 const loadDocumentaryMovies = movies => ({type: LOAD_DOCUMENTARY_MOVIES, movies});
-const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
+//const toggleIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 //thunks
 export const getPopularMovies = page => {
     return (dispatch) => {
-        dispatch(toggleIsFetching(true));
+        //dispatch(toggleIsFetching(true));
         getMoviesAPI.getPopular(page)
         .then(response => {
             dispatch(loadPopularMovies(response.data.results))
-            dispatch(toggleIsFetching(false));
+            //dispatch(toggleIsFetching(false));
         });
     }
 } 
@@ -97,3 +98,22 @@ export const getDocumentaryMovies = page => {
         .then(response => dispatch(loadDocumentaryMovies(response.data.results)));
     }
 }
+
+/* common thunkcreator for all genges */
+
+/* export const getAllMovies = page => {
+    return (dispatch) => {
+        (document.readyState === 'loading' || document.readyState === 'interactive') && dispatch(toggleIsFetching(true));
+        getMoviesAPI.getPopular(page)
+        .then(response => dispatch(loadPopularMovies(response.data.results)));
+        getMoviesAPI.getSeries(page)
+        .then(response => dispatch(loadSeries(response.data.results)));
+        getMoviesAPI.getFamilyMovies(page)
+        .then(response => dispatch(loadFamilyMovies(response.data.results)));
+        getMoviesAPI.getDocumentaryMovies(page)
+        .then(response => dispatch(loadDocumentaryMovies(response.data.results)));
+        (document.readyState === 'complete') && dispatch(toggleIsFetching(false));
+        }      
+    } */
+
+//export const setIsFetchingFalse

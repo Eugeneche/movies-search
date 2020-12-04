@@ -9,7 +9,7 @@ import HeaderContainer from '../Header/HeaderContainer';
 
 
 
-class Dashboard extends React.Component {
+class Dashboard extends React.PureComponent {
 
     state = {
         popularCurrentPage: 1,
@@ -100,7 +100,7 @@ class Dashboard extends React.Component {
                     <MovieItem poster={ movie.poster_path !== null ? posterBaseURL + movie.poster_path : movieImgPlaceholder } alt={movie.title + ' movie poster'} title={movie.title} thisMovieGenres={movie.genre_ids} allGenres={this.props.allGenres} rating={movie.vote_average} />
                 </NavLink>
         });
-
+        
         return <Fragment>            
             <HeaderContainer />
             <h1>Popular movies</h1>

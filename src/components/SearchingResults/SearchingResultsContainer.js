@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import SearchingResults from './SearchingResults';
 import { getSearchingResults, getSearchingResultsNextMovies } from '../../redux/reducers/searchReducer';
 import { getSearchingResultsSelector, getQuerySelector, getIsFetchingSearchingResultsSelector } from '../../redux/selectors/searchSelector';
+import { getGenres } from '../../redux/selectors/dashboardSelectors';
+
 
 
 class SearchingResultsContainer extends React.Component {
@@ -41,7 +43,8 @@ class SearchingResultsContainer extends React.Component {
 const mapStateToProps = state => ({
     results: getSearchingResultsSelector(state),
     query: getQuerySelector(state),
-    isFetching: getIsFetchingSearchingResultsSelector(state)
+    isFetching: getIsFetchingSearchingResultsSelector(state),
+    allGenres: getGenres(state)
 })
 
 export default connect(mapStateToProps, {getSearchingResults, getSearchingResultsNextMovies})(SearchingResultsContainer);
